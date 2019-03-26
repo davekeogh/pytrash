@@ -27,7 +27,10 @@ def worker():
 
     items = os.listdir(TRASH_DIR + '/files')
 
-    if len(items):
+    if len(items) == 1:
+        desktop_file.set('Desktop Entry', 'Icon', ICON_FULL)
+        desktop_file.set('Desktop Entry', 'Name', 'Trash - 1 item')
+    elif len(items) > 1:
         desktop_file.set('Desktop Entry', 'Icon', ICON_FULL)
         desktop_file.set('Desktop Entry', 'Name', 'Trash - %s items' % len(items))
     else:
