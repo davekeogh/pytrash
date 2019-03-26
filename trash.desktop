@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Trash
+Comment=Where the rubbish goes
+Icon=user-trash-full
+Exec=xdg-open "trash://"
+Actions=empty-trash;
+Categories=
+StartupNotify=false
+
+[Desktop Action empty-trash]
+Name=Empty Trash
+Exec=trash-empty
