@@ -45,10 +45,6 @@ if __name__ == '__main__':
     if not os.path.isfile(DESKTOP_FILE):
         # TODO: Install the desktop file
         pass
-    
-    desktop_file = ConfigParser()
-    desktop_file.optionxform = str 
-    desktop_file.read(DESKTOP_FILE)
 
     while (True):
         t = threading.Thread(target=worker)
