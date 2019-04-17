@@ -5,13 +5,21 @@
 # This makes use of trash-empty from the trash-cli package
 
 
-import os, os.path
+import os, os.path, subprocess
 
 from xdg import BaseDirectory
 
 
 TRASH_DIR = os.path.join(BaseDirectory.xdg_data_home, 'Trash')
 
+
+def empty():
+    try:
+        subprocess.Popen('trash-empty').run()
+    except FileNotFoundError:
+        fallback_empty()
+        
+    
 
 def fallback_empty():
     # TODO: If trash-cli isn't installed we have to do something different
